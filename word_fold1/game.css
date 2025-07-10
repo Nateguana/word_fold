@@ -1,0 +1,89 @@
+@font-face {
+    font-family: hacker;
+    src: url(terminal.ttf);
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+    color: rgb(0, 204, 0);
+    font-family: hacker;
+    font-size: medium;
+}
+
+.ohno {
+    background-image: linear-gradient(var(--angle),
+            hsl(calc(pi*var(--angle)), 100%, 50%) 25%,
+            hsl(calc(e*var(--angle)), 100%, 50%) 75%);
+}
+
+.ohno .cell {
+    background-image: linear-gradient(calc(-1 * var(--angle)),
+            hsl(calc(-1 * pi * var(--angle)), 100%, 50%) 25%,
+            hsl(calc(-1 * e * var(--angle)), 100%, 50%) 75%);
+}
+
+.ohno .cell.empty {
+    background-image: linear-gradient(calc(-1 * pi * e * var(--angle)),
+            hsl(calc(-1 * pi * var(--angle)), 100%, 50%) 25%,
+            hsl(calc(-1 * e * var(--angle)), 100%, 50%) 75%);
+}
+
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    font-size: xx-large;
+}
+
+.cell-holder {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    width: 50%;
+    aspect-ratio: 1/1;
+    gap: 8px;
+    transform: translateX(calc((sin(var(--angle) * 2) + 1)*50%)) rotate(var(--angle));
+    user-select: none;
+}
+
+.cell {
+    background-color: lightgray;
+    font-size: larger;
+    overflow-wrap: anywhere;
+    background-color: rgb(32, 32, 32);
+    transform: rotate(calc(-1 * var(--angle)));
+}
+
+.cell.empty {
+    background: black;
+}
+
+.cell .inner {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cell.empty .inner {
+    opacity: 0;
+    background-image: repeating-radial-gradient(circle at 17% 32%,
+            white, black 0.000085px);
+    transition: opacity .1s ease-in-out;
+}
+
+.cell.empty:hover .inner {
+    opacity: 1;
+}
+
+.cell.selected {
+    border: yellow solid 8px;
+}
+
+
+.no-margin {
+    margin: 0 0;
+}
