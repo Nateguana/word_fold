@@ -55,7 +55,9 @@ body {
     background-color: rgb(32, 32, 32);
     /* transform: rotate(calc(-1 * var(--angle))); */
     position: relative;
-    transform: rotate3d(1,1,1,var(--angle));
+    /* --new-angle: calc(var(--angle) + var(--x) * pi * 10deg + var(--y) * e * 5deg); */
+    --new-angle: calc(var(--angle) + (var(--x) * e + 1) * (var(--y) * pi + 1) * 5deg);
+    transform: rotate3d(0,0, 1, var(--new-angle));
 }
 
 .cell.empty {

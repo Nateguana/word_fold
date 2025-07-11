@@ -98,7 +98,7 @@ function on_click(x, y) {
 }
 
 let accel = .001;
-let velocity = 2;
+let velocity = 13;
 let angle = 0;
 
 function on_frame() {
@@ -119,7 +119,7 @@ function start_game() {
     document.getElementById("game").classList.remove("hidden");
     document.querySelectorAll(".rr").forEach(e => {
         let duration = e.duration;
-        let seconds = Math.random()*duration;
+        let seconds = Math.random() * duration;
         e.currentTime = seconds;
         e.play()
     })
