@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    /* font-weight: 900; */
+    /* opacity: 0.999; */
+    background: linear-gradient(var(--angle),
+            hsl(calc(pi*var(--angle)), 100%, 50%),
+            hsl(calc(e*var(--angle)), 100%, 50%));
+    min-height: 100vh
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.cell-holder {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    height: 75vh;
+    aspect-ratio: 1/1;
+    gap: 8px;
+    transform: translateX(100px) rotate(calc(-2 * var(--angle)));
+}
+
+.cell-inner {
+    display: flex;
+    justify-content: center;
+    background-image: url('passion.webp');
+    align-items: center;
+    font-size: larger;
+    overflow-wrap: anywhere;
+    background-size: contain;
+    background-clip: text;
+    color: transparent;
+    transform: rotate(calc(pi * var(--angle)));
+    position: absolute;
+    font-size: x-large;
+    z-index: 10;
+
+}
+
+.cell-inner.selected {
+    color: yellow;
+    font-size: x-large;
+    position: absolute;
+    z-index: 10;
+    opacity: 1;
+}
+
+.no-margin {
+    margin: 0 0;
+}
+
+.cell {
+    background-image: url('passion.jpg');
+    background-size: cover;
+    overflow-wrap: anywhere;
+    display: flex;
+    justify-content: center;
+    /* clip-path: polygon(0 100%, 100% 100%, 50% 0%); */
+    transform: rotate(calc(pi * var(--angle)));
+}
