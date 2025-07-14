@@ -1,0 +1,3 @@
+const phong_vert = "attribute vec3 vPosition;\r\nattribute vec3 vNormal;\r\nattribute vec2 vTexture;\r\n\r\nuniform mat4 mModel;\r\nuniform mat4 mView;\r\nuniform mat4 mProjection;\r\nuniform mat4 mShadow;\r\nuniform vec3 vLightPos;\r\n\r\nvarying vec3 L, N, V;\r\nvarying vec2 UV;\r\nvarying vec4 S;\r\n\r\nvoid main() {\r\n    vec4 world_pos = mModel * vec4(vPosition, 1.0);\r\n    vec4 view_pos = mView * world_pos;\r\n    vec3 normal = mat3(mView) * mat3(mModel) * vNormal;\r\n\r\n    L = vLightPos - view_pos.xyz;\r\n\r\n    N = normal;\r\n\r\n    V = -view_pos.xyz;\r\n\r\n    UV = vTexture;\r\n\r\n    S = mShadow * world_pos;\r\n\r\n    gl_Position = mProjection * view_pos;\r\n}";
+
+export { phong_vert as default };

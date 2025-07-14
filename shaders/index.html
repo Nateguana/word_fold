@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>My Sphere Renderer</title>
+    <link rel="icon" href="files/favicon.svg">
+    <!-- shaders are in thier respective files in src for that sweet sweet intellisense -->
+    <!-- see readme.txt -->
+
+  <script type="module" crossorigin src="./build/MV.js"></script>
+  <script type="module" crossorigin src="./build/webgl.js"></script>
+  <script type="module" crossorigin src="./build/boundary.js"></script>
+  <script type="module" crossorigin src="./build/object.js"></script>
+  <script type="module" crossorigin src="./build/shadow.vert.js"></script>
+  <script type="module" crossorigin src="./build/shadow.frag.js"></script>
+  <script type="module" crossorigin src="./build/skybox.vert.js"></script>
+  <script type="module" crossorigin src="./build/skybox.frag.js"></script>
+  <script type="module" crossorigin src="./build/phong.vert.js"></script>
+  <script type="module" crossorigin src="./build/phong.frag.js"></script>
+  <script type="module" crossorigin src="./build/shaders.js"></script>
+  <script type="module" crossorigin src="./build/data_loader.js"></script>
+  <script type="module" crossorigin src="./build/model_data.js"></script>
+  <script type="module" crossorigin src="./build/camera.js"></script>
+  <script type="module" crossorigin src="./build/light.js"></script>
+  <script type="module" crossorigin src="./build/main.js"></script>
+  <link rel="stylesheet" crossorigin href="./build/main-B0XgepTp.css">
+</head>
+
+<body>
+
+    <div class="main">
+        <h1 id='htitle'>Vroom Vroom</h1>
+
+        <canvas id="canvas" width="400" height="400" style="border: 1px solid black;">
+            Please use a browser that supports the "canvas" tag.
+        </canvas>
+
+        <div>
+            <span>Lights:</span>
+            <span id="light-switch">All Light</span>
+            <span> | Control with L</span>
+        </div>
+        <div>
+            <span>Camera Name:</span>
+            <span id="camera-name">Track</span>
+            <span> | Control with D</span>
+        </div>
+        <div>
+            <span>Track Camera Rotation:</span>
+            <span id="camera-rot">0</span>
+            <span> | Control with C</span>
+        </div>
+         <div>
+            <span>Car Moving:</span>
+            <span id="car-move">Off</span>
+            <span> | Control with M</span>
+        </div>
+        <div>
+            <span>Skybox:</span>
+            <span id="show-skybox">On</span>
+            <span> | Control with E</span>
+        </div>
+        <div>
+            <span>Shadows:</span>
+            <span id="show-shadows">On</span>
+            <span> | Control with S</span>
+        </div>
+        <div>
+            <span>Reflections:</span>
+            <span id="show-reflect">On</span>
+            <span> | Control with R</span>
+        </div>
+        <div>
+            <span>Refractions:</span>
+            <span id="show-refract">On</span>
+            <span> | Control with F</span>
+        </div>
+
+        <div>
+        </div>
+    </div>
+
+</body>
+
+</html>

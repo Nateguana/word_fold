@@ -1,0 +1,24 @@
+.input {
+    all: unset;
+}
+
+.base-svg-style {
+    all: unset;
+    stroke: #000000
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+}
+
+.button {
+    width: 75px;
+}
